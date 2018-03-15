@@ -1,0 +1,31 @@
+type Membership {
+  member: Member!
+  coverage: Coverage!
+}
+
+type Coverage {
+  effectiveStartDate: String!
+  effectiveEndDate: String!
+
+}
+
+type Member {
+  gender: String!
+  eligibilityStatus: String
+  firstName: String!
+  lastName: String!
+
+}
+
+# The Root Query for the application
+type Query {
+    findPatient(count: Int): Membership!
+
+}
+
+schema {
+query: Query
+}
+
+
+
